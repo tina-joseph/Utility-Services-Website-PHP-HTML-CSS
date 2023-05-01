@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel='stylesheet' href='LoginStyles.css'>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+    function validate() {
+      var name = document.getElementById("CName").value;
+      var address1 = document.getElementById("Address1").value;
+      var address2 = document.getElementById("Address2").value;
+      var zipcode = document.getElementById("CZipCode").value;
+      var email = document.getElementById("CEmail").value;
+      var contact = document.getElementById("CContact").value;
+      var username = document.getElementById("CUName").value;
+      var password1 = document.getElementById("pwd1").value;
+      var password2 = document.getElementById("pwd2").value;
+
+      // Check Name field
+	var nameRegex = /^[A-Za-z]+ [A-Za-z]+$/i;
+	if (!nameRegex.test(name)) {
+  		alert("Please enter your valid full Name");
+ 	 return false;
+	}
+      
+      // Check Address Line 1 field
+	if (!/^[a-zA-Z0-9.\s]+$/.test(address1)) {
+  		alert("Address field can only have alphanumeric characters");
+  		return false;
+		}
+
+	// Check Address Line 2 field
+	if (!/^[a-zA-Z0-9.\s]+$/.test(address2)) {
+ 		 alert("Address field can only have alphanumeric characters");
+  		 return false;
+	}
+
+    
+      // Check Zip Code field
+      var zipcodeRegex = /^[0-9]{5}$/;
+      if (!zipcodeRegex.test(zipcode)) {
+        alert("Please enter a valid Zip Code (5 digits)");
+        return false;
+      }
+
+      // Check Email field
+      var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid Email id");
+        return false;
+      }
+
+      // Check Contact field
+      var contactRegex = /^\d{10}$/;
+      if (!contactRegex.test(contact)) {
+        alert("Please enter a valid Contact number");
+        return false;
+      }
+
+      // Check Username field
+      var usernameRegex = /^[A-Za-z0-9_]+$/;
+      if (!usernameRegex.test(username)) {
+        alert("Username should only contain alphabets, digits & underscore");
+        return false;
+      }
+
+      // Check Password field
+	var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+	if (!passwordRegex.test(password1)) {
+ 		 alert("Password should be minimum 8 characters long and should contain atleast one uppercase letter, one lowercase letter and one digit");
+  		return false;
+	}
+
+      
+      // Check Confirm Password field
+      if (password1 != password2) {
+        alert("Passwords do not match");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-md-6 login-form-3">
+      <h3>Create your Account</h3>
+      <form action="createacc_submit.php" method="post" onsubmit="return validate()">
+        <div class="form-group">
+          <label class="ForgetPwd"> Name</label>
+          <input class="form-control" type="text" name="CName" id="CName" placeholder="Ex: Mike George" required>
+   </div>
+  <br><br><br>
+
+<div class="form-group">
+<label class="ForgetPwd"> Address line 1</label>
+  <input type="text" name="Address1" id="Address1" class="form-control" placeholder="Ex: 1234 Woodson Ave" required>
+   </div>
+  <br><br>
+
+<div class="form-group">
+<label class="ForgetPwd">   Address line 2</label>
+  <input type="text" name="Address2" id="Address2" class="form-control"  placeholder="Ex: Unit 1234" required>
+   </div>
+  <br><br>
+
+<div class="form-group">
+  <label class="ForgetPwd">Zip Code</label>  
+  <select name="CZipCode" id="CZipCode" class="form-control" required>
+    <option value="" disabled selected>Select zip code</option>
+    <option value="46225">46225</option>
+    <option value="46112">46112</option>
+  </select>
+</div>
+<br><br>
+
+
+<div class="form-group">
+<label class="ForgetPwd">   Email id:</label>
+  <input type="text" name="CEmail" id="CEmail" class="form-control" placeholder="Ex:abc123@gmail.com" required>
+   </div>
+  <br><br>
+
+<div class="form-group">
+<label class="ForgetPwd">   Phone No</label>
+  <input type="text" name="CContact" id="CContact" class="form-control" placeholder="Ex: 9998887766" required>
+   </div>
+  <br><br>
+
+<div class="form-group">
+<label class="ForgetPwd">   Username</label>
+  <input type="text" name="CUName" id="CUName" class="form-control" placeholder="Ex: abc_12" required>
+   </div>
+  <br><br>
+
+<div class="form-group">
+<label class="ForgetPwd"> Password <br><small>(minimum 8 characters long, at least 1 uppercase letter, 1 lowercase letter, and 1 digit)</small></label>
+  <input  name="pwd1" id="pwd1" type="password" class="form-control" required>
+   </div>
+  <br><br>
+
+<div class="form-group">
+<label class="ForgetPwd">   Confirm Password</label>
+  <input  name="pwd2" id="pwd2" type="password" class="form-control" required><br>
+ </div>
+  <br></br></br>
+  
+  <input  class="btnSubmit" type="submit" name="createacc">
+
+</div>
+                <div class="col-md-6 login-form-2"></div>
+</div>
+</form> 
+</body>
+</html>
+
