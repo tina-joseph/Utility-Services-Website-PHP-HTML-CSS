@@ -110,23 +110,30 @@ to view all the slots, along with their status as booked or available.
 • Customer: This table contains details of customers. CustID is an auto increment column, which is created when a 
 new customer is inserted into the table. It has columns pertaining to customer specific details like name, address, 
 contact, email, etc. The password stored is encrypted using MD5 algorithm.
+
 • Vendor: This table contains details of vendors. VenID is an auto increment column, which is created when a new 
 vendor is inserted into the table. It has columns pertaining to vendor specific details like name, address, contact, 
 email, etc. The password stored is encrypted using MD5 algorithm. It also has a Zipserved column which is used 
 to determine which vendor provides service in which zip code area.
+
 • SCategories: This table has details of the broad categories of Services. CatID is auto increment column. The image
 location column stores the image's location, and it is shown on the customer's landing page.
+
 • Services: This table has many to one mapping with the Scategories table. Each category can have multiple services 
 associated with it. The description and features columns store the data visible on the Service details page. It also 
 has a cost column which has cost per sq. Ft. For the service.
+
 • ServiceVendor: This table is a mapping table between the vendors and services.(Example: One vendor can provide 
-many services; one services can be offered by many vendors based on the ZipServed column on the Vendor table)
+many services; one services can be offered by many vendors based on the ZipServed column on the Vendor table).
+
 • VendorAvailability: This table stores the availability of vendor for each date. It can store multiple slots for each 
 date. It also has an is_available column which shows if the slot is available or not available.
+
 • Orders: This table has details of all the orders. SerID is the foreign key of the Services table, VenID is the foreign 
 key of the Vendor table and CusID is the foreign key of the Customer table. It also has address and contact 
 information for the Order. SlotID is foreign key of the VendorAvailabiliy table. OrderStatus gives information 
 whether the order is in pending status or completed status.
+
 • Reviews: This table stores reviews and rating for all the Orders. OrderID is the foreign key of the Orders table.
 
 4. CHALLENGES  
