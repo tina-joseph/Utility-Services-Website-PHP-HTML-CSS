@@ -129,7 +129,24 @@ information for the Order. SlotID is foreign key of the VendorAvailabiliy table.
 whether the order is in pending status or completed status.
 • Reviews: This table stores reviews and rating for all the Orders. OrderID is the foreign key of the Orders table.
 
-4. FUTURE WORK 
+4. CHALLENGES  
+
+4.1 Outstanding Issues to be Addressed 
+
+The outstanding bug or issue of our utility service website that needs to be addressed is to dynamically update the dropdown menu for services on the homepage. Currently, our website can dynamically add new services, but the dropdown menu on the homepage does not reflect these updates. This could potentially cause confusion and frustration for our customers who use the dropdown menu on the homepage to access the newly launched services. Thus, it is crucial to address this issue by implementing a mechanism that automatically updates the dropdown menu in real-time when new services are introduced to our website. 
+
+In addition to this, we have encountered another issue for our website, which is the inflexibility of the service slot creation page for the vendors. At present, the slot creation page only allows the vendors to create slots at specific windows of time (like 8 am, 10 am, 1 pm, and 3 pm), which might not be convenient for all vendors and customer’s schedule. Thus, a more flexible system which allows the vendors to dynamically create service slots at times that are convenient for them, would be required to address this issue. Hence, the vendor would be able to provide their services according to a schedule that is convenient, rather than the fixed time slots, hence improving the overall vendor satisfaction and a better experience for the customers accessing our website. 
+
+ 
+4.2 Challenges Faced  
+![Figure 6: Illustration of the flow of data between main functional pages on the customer end of the website. ]("C:\Users\tinaj\Desktop\Web Development\report images\Fig6.jpg")
+
+
+There were several challenges we encountered while designing our utility services website, one of which was to add the service address features for the cart page of our website, i.e., we wanted to display the registered address of the logged in customer, while providing an option to update those address fields along with validation for the updates, if they were ordering the service for a different address than their registered one. Additionally, we needed to calculate the total service cost dynamically as the area was updated in the cart page and insert both the fields for area and total cost into the ‘Orders’ table. 
+
+We address these challenges mostly by the usage of the AJAX script to update the existing customer address details in real time without refreshing the website. So, the customers could simply update their address information, and it also made it possible for us to precisely determine the service area and cost. Additionally, we developed a dynamic method that retrieved vendor slots based on a selected zip code of the customer and let them select a practical time slot for their service. This made it easier for our clients to place orders by streamlining the procedure. 
+
+5. FUTURE WORK 
 
 Our utility service website entails several functional elements and long-term goals intended to enhance our services, expand 
 our clientele, and guarantee satisfaction for our customers. One of the primary objectives we have is to expand the range of 
