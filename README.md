@@ -139,9 +139,6 @@ In addition to this, we have encountered another issue for our website, which is
 
  
 4.2 Challenges Faced  
-![Figure 6: Illustration of the flow of data between main functional pages on the customer end of the website. ]("C:\Users\tinaj\Desktop\Web Development\report images\Fig6.jpg")
-
-
 There were several challenges we encountered while designing our utility services website, one of which was to add the service address features for the cart page of our website, i.e., we wanted to display the registered address of the logged in customer, while providing an option to update those address fields along with validation for the updates, if they were ordering the service for a different address than their registered one. Additionally, we needed to calculate the total service cost dynamically as the area was updated in the cart page and insert both the fields for area and total cost into the ‘Orders’ table. 
 
 We address these challenges mostly by the usage of the AJAX script to update the existing customer address details in real time without refreshing the website. So, the customers could simply update their address information, and it also made it possible for us to precisely determine the service area and cost. Additionally, we developed a dynamic method that retrieved vendor slots based on a selected zip code of the customer and let them select a practical time slot for their service. This made it easier for our clients to place orders by streamlining the procedure. 
